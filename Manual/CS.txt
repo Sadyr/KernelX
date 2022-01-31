@@ -42,6 +42,17 @@ GIT AND GITHUB
 # git branche -M main
 # git push -U origin main
 
+Users and group
+useradd username  - создать пользователя
+passwd username    -добавить пароль для пользователю
+su username    - перейти в кдругому пользователю
+usermod -aG wheel username  - дать привилегии sudo useru
+sudo whoami  - проверить привилегии  sudo
+uname -a - all information system
+$ sudo useradd -m -d /home/bob01 bob01   - добавить юзера
+# rm -rf /etc/vsftpd/*   - удалить все из папки
+chown sadyr:sadyr /etc/vsftpd/vsftpd.conf   - изменить владельца
+
 
 
 
