@@ -52,6 +52,14 @@ uname -a - all information system
 $ sudo useradd -m -d /home/bob01 bob01   - добавить юзера
 # rm -rf /etc/vsftpd/*   - удалить все из папки
 chown sadyr:sadyr /etc/vsftpd/vsftpd.conf   - изменить владельца
+scp root@89.219.32.27:/etc/vsftpd/vsftpd.conf /home/balerion/Videos   - скачать файл из сервера на локалку
+scp /home/balerion/Videos/vsftpd.conf  root@89.219.32.27:/home/sadyr   - загрузить с локалки на сервер файл
+$ sudo yum install net-tools   - установить сетевые инструменты
+Разрешаем бранмауеру трафик по 21 порту для FTP
+sudo firewall-cmd --zone=public --permanent --add-port=21/tcp
+sudo firewall-cmd --zone=public --permanent --add-service=ftp
+sudo firewall-cmd –-reload
+
 
 
 
