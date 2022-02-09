@@ -1,24 +1,7 @@
 from ftplib import FTP
-
-ftp = FTP('')
-ftp.connect("localhost", 1026)
-ftp.login()
-ftp.cwd('/home/balerion/Downloads')
-ftp.retrlines('LIST')
-
-
-def uploadfile():
-    filename = '/home/balerion/Documents/testfile.txt'
-    ftp.storbinary('STOR ' + filename, open(filename, 'rb'))
-    ftp.quit()
-
-
-def downloadfile():
-    filename = '/home/balerion/downloadfile.txt'
-    localfile = open(filename, 'wb')
-    ftp.retrbinary('RETR ' + filename, localfile.write, 1024)
-    ftp.quit()
-    localfile.close()
-
-
-uploadfile()
+ftp = FTP('89.219.32.27')
+ftp.login(user='testuser',passwd='12345')
+data = ftp.retrlines('LIST')
+cur = ftp.pwd()
+print(cur)
+print(data)
