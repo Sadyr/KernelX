@@ -59,6 +59,28 @@ $ sudo yum install net-tools   - установить сетевые инстр
 sudo firewall-cmd --zone=public --permanent --add-port=21/tcp
 sudo firewall-cmd --zone=public --permanent --add-service=ftp
 sudo firewall-cmd –-reload
+ssh-copy-id root@89.219.32.27   -   lj,fdbnm  publik key на сервер
+yum install links  - скачать браузер на сервер сентос
+yum search httpd   -  проверить установлеен ли  демон веб сервера
+yum install httpd httpd manual  -  установить веб сервер апач и мануа л к ниму
+rpm -qi httpd  - проверить какие пакеты апач укстановлены
+rpm -ql httpd   - вывести лист
+rpm -qd httpd    поиск документаций
+rpm -qc httpd   - поиск конфиг файлов
+yum install net-tools    -  установить сетевые утилиты
+netstat -lt -p    -  показать слущающие тсп порты процессы
+service httpd status    -  проверить статус веб сервера
+netstat -lt -p -n    -  показать номера портов
+curl -v http://localhost/ 1>/dev/null   -  проверка работы веб сервера
+iptables -L    -  показать пакетный фильтр (который блокирует доступ к веб серверу)
+service iptables stop   - остановить пакетный фильтр
+
+httpd -t   - проверка синтакиса конфиг файлов
+service httpd reload   -  перечитать конфиг файлы
+
+
+
+
 
 
 
