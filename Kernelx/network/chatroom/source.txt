@@ -1,0 +1,5 @@
+Как сделать чат-приложение на Python   : https://www.thepythoncode.com/article/make-a-chat-room-application-in-python
+Потоки демона в Python : https://www.thepythoncode.com/article/daemon-threads-in-python
+Python. Урок 22. Потоки и процессы в Python. Часть 1. Управление потоками: https://devpractice.ru/python-lesson-22-concurrency-part-1/  :https://pythobyte.com/daemon-threads-in-python-c5dbbf24/
+Потоки демонов в Python – Что это такое и как их создавать?
+
