@@ -58,7 +58,7 @@ while True:
 
 # close client sockets
 for cs in client_sockets:
-    cs.close
+    cs.close()
 # close server socket
 s.close
 

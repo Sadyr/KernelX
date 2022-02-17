@@ -19,8 +19,8 @@ client_color = random.choice(colors)
 # server's IP address
 # if the server is not on this machine
 # put the private (network) IP address (e.g 192.168.1.2)
-SERVER_HOST = "127.0.0.1"
-SERVER_PORT = 5002  # server's port
+SERVER_HOST = "89.219.32.27"
+SERVER_PORT = 5005  # server's port
 separator_token = "<SEP>"  # we will use this to separate the client name % message
 
 # initialize TCP socket
@@ -41,7 +41,7 @@ def listen_for_messages():
 
 
 # make a thread that listens for messages to this client & print them
-t = Thread(target=listen_for_messages())
+t = Thread(target=listen_for_messages)
 # make the thread daemon so it ends whenever the main thread ends
 t.daemon = True
 # start the thread
