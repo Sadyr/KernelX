@@ -4,21 +4,28 @@ from threading import Thread
 
 # server's IP address
 SERVER_HOST = "0.0.0.0"
+print(f"Адрес текущего сервера {SERVER_HOST}")
 SERVER_PORT = 5002 # port we want to use
+print(f"Порт для соедтинение текущего сервера {SERVER_PORT}")
+
 separator_token = "<SEP>" # we will use this to separate the clietn name & message
 
 # initialize list/set of all connected client's sockets
 client_sockets = set()
 # create a TCP socket
 s = socket.socket()
+print(f"Создан сокет{s}")
 # make hte port as reusable port
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR,1)
+print(f"Делаем сокет многоразовым{s}")
 s.bind((SERVER_HOST, SERVER_PORT))
+print(f"Прикрепляем за сокетом  {s} IP  и PORT")
 # listen for upcoming connection
 s.listen(5)
+print(f"Слушаем сокет  {s} ")
 print(f"[*] lisstening as {SERVER_HOST}:{SERVER_PORT}")
 
-
+print(" Создаем функцию для слушание клиентов")
 def listen_for_client(cs):
     """
     THis function keep listening for a message from "cs" socket
