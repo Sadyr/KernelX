@@ -1,5 +1,6 @@
 import socket
 from threading import Thread
+import datetime
 
 
 # server's IP address
@@ -26,7 +27,7 @@ print(f"Слушаем сокет  {s} ")
 print(f"[*] lisstening as {SERVER_HOST}:{SERVER_PORT}")
 
 print(" Создаем функцию для слушание клиентов")
-def listen_for_client(cs):
+def listen_for_client(cs,client_address):
     """
     THis function keep listening for a message from "cs" socket
     Whenever a message is received, broadcast it to all other connected clietns
@@ -44,6 +45,10 @@ def listen_for_client(cs):
             # if we received a message, replace the "SEP"
             # token with ": " for nice printing
             msg = msg.replace(separator_token, ": ")
+            if len(msg) > 0:
+                msg_logs = open('msg_logs', 'a')
+                msg_logs.write(str(client_address) + msg +'\n')
+                msg_logs.close()
         # iterate over all connected sockets
         for client_socket in client_sockets:
             # and send the message
@@ -51,13 +56,17 @@ def listen_for_client(cs):
 
 while True:
     # we keep listening for new connection all the time
+    #print(f"Собирается подключиться клиент по адресу {client_address} ")
+
     client_socket, client_address = s.accept()
-    print(f"[+] {client_address} connected.")
+    print(f"принимаем клиента по адресу по адресу {client_address} ")
+
+    print(f"[+] {client_address} Подключился.")
     # add the new connected  client to connected sockets
     client_sockets.add(client_socket)
 
     # start a new thread that listens for each client's messages
-    t = Thread(target=listen_for_client, args=(client_socket,))
+    t = Thread(target=listen_for_client, args=(client_socket,client_address))
     # make the thread daemon so it ends whenever the  main thread ends
     t.daemon = True
     # start the thread
