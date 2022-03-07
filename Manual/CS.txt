@@ -68,6 +68,8 @@ netstat -lt -p -n    -  показать номера портов
 curl -v http://localhost/ 1>/dev/null   -  проверка работы веб сервера
 iptables -L    -  показать пакетный фильтр (который блокирует доступ к веб серверу)
 service iptables stop   - остановить пакетный фильтр
+netstat -an |grep 65432
+
 
 
 
