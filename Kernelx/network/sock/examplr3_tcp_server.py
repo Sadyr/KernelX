@@ -41,7 +41,11 @@ while True:
             else:
                 continue
 
-
+set_clients = ()
+while True:
+    client_socket, client_address = sock.accept()
+    print(f"+ Клиент с адресом подключился {client_address}")
+    set_clients.add(client_socket)
 
 
 
