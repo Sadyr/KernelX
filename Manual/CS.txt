@@ -47,6 +47,10 @@ sudo firewall-cmd --zone=public --permanent --add-port=21/tcp
 sudo firewall-cmd --zone=public --permanent --add-service=ftp
 sudo firewall-cmd –-reload
 ssh-copy-id root@89.219.32.27   -   lj,fdbnm  publik key на сервер
+UBUNTU ADD USER>>>>>>>>>>>>>>>>.
+adduser sadyr    >>>
+usermod -aG sudo sadyr
+su - sadyr
 
 WEB-SERVER >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 sudo systemctl stop httpd  - work with process httpd  | start stop status restart reload disable enable 
@@ -79,6 +83,10 @@ FIREWALL >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
 firewall-cmd  --permanent  --add-service=http  >> Добавить сервисе http в фаирволл
 firewall-cmd --permanent  --add-service=https  >> Добавить сервисе https в фаирволл
 firewall-cmd  --reload   >> Перечитать конфиги файрвола
+
+PACKAGE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+rpm -qa |grep mariadb  >> Найти установленную прогу из списка
+yum remove mariadb-libs-5.5.68-1.el7.x86_64 >>>>>>>>>Удалить прогу
 
 
 
