@@ -59,6 +59,9 @@ rpm -qd httpd    поиск документаций
 rpm -qc httpd   - поиск конфиг файлов
 httpd -t   - проверка синтакиса конфиг файлов
 service httpd reload   -  перечитать конфиг файлы
+https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-centos-7-ru
+https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7#step-four-%E2%80%94-test-php-processing-on-your-web-server
+
 
 NETWORK >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 yum install net-tools    -  установить сетевые утилиты
@@ -69,6 +72,8 @@ curl -v http://localhost/ 1>/dev/null   -  проверка работы веб 
 iptables -L    -  показать пакетный фильтр (который блокирует доступ к веб серверу)
 service iptables stop   - остановить пакетный фильтр
 netstat -an |grep 65432
+hostname -i  >> Узнать ip хоста
+curl -4 icanhazip.com  >> Узнать публичный адрес хоста
 
 FIREWALL >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
 firewall-cmd  --permanent  --add-service=http  >> Добавить сервисе http в фаирволл
