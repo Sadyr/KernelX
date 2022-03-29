@@ -70,6 +70,11 @@ iptables -L    -  показать пакетный фильтр (который
 service iptables stop   - остановить пакетный фильтр
 netstat -an |grep 65432
 
+FIREWALL >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+firewall-cmd  --permanent  --add-service=http  >> Добавить сервисе http в фаирволл
+firewall-cmd --permanent  --add-service=https  >> Добавить сервисе https в фаирволл
+firewall-cmd  --reload   >> Перечитать конфиги файрвола
+
 
 
 

@@ -1,17 +1,27 @@
 import socket
+import threading
 
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 ip = '127.0.0.1'
-port = 10001
-client_socket.connect((ip,port))
+port = 1032
+client_socket.connect((ip, port))
 
-#welcome = client_socket.recv(1024).decode()
-#print(welcome)
+
+def listen_for_message():
+    while True:
+        message = client_socket.recv(1024).decode()
+        print(message)
+
+
+t = threading.Thread(target=listen_for_message)
+t.daemon = True
+t.start()
+
+# welcome = client_socket.recv(1024).decode()
+# print(welcome)
 while True:
-    #mes = input()
-    #client_socket.send(mes.encode())
-    peres = client_socket.recv(1024).decode()
-    #print(mes)
-    print(peres)
-#client_socket.close()
+    your_mes_for_chat = input()
+    client_socket.send(your_mes_for_chat.encode())
+    print(your_mes_for_chat)
+# client_socket.close()
