@@ -65,7 +65,7 @@ httpd -t   - проверка синтакиса конфиг файлов
 service httpd reload   -  перечитать конфиг файлы
 https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-centos-7-ru
 https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7#step-four-%E2%80%94-test-php-processing-on-your-web-server
-
+https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-20-04-ru
 
 NETWORK >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 yum install net-tools    -  установить сетевые утилиты
