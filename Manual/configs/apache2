@@ -1,0 +1,14 @@
+ /etc/apache2/sites-enabled/kernelx.ru.conf
+ <VirtualHost *:80>
+    <Directory /var/www/kernelx.ru>
+        Options +ExecCGI
+        AddHandler cgi-script .py
+    </Directory>
+       ServerAdmin sadyr0012@kernelx.ru
+       ServerName kernelx.ru
+       ServerAlias www.kernelx.ru
+       DocumentRoot /var/www/kernelx.ru
+       ErrorLog ${APACHE_LOG_DIR}/error.log
+       CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+~
