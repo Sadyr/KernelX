@@ -51,7 +51,12 @@ UBUNTU ADD USER>>>>>>>>>>>>>>>>.
 adduser sadyr    >>>
 usermod -aG sudo sadyr
 su - sadyr
+$ sudo userdel боб
+$ passwd bob
 
+
+Существует файл с именем /etc/sudoers, в этом файле перечислены пользователи,
+которые могут запускать sudo. Вы можете редактировать этот файл с помощью команды visudo .
 WEB-SERVER >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 sudo systemctl stop httpd  - work with process httpd  | start stop status restart reload disable enable 
 yum install links  - скачать браузер на сервер сентос
@@ -111,7 +116,9 @@ alias foobar='ls -la'    - создание псевдонима
  unalias foobar -  удалить псевдонимы
  cat < peanuts.txt > banana.txt  -  перенаправление ввода
 
-
+TEXT
+echo $HOME  - path to home
+echo $USER   - see username
 
 
 
