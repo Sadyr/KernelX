@@ -11,3 +11,6 @@ svet 12345
 dim 12345
 king asdfg
 bou asd
+Susano 98765
+misha 12345
+sadt 12345
