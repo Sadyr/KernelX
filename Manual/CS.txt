@@ -90,7 +90,6 @@ yum remove mariadb-libs-5.5.68-1.el7.x86_64 >>>>>>>>>Удалить прогу
 
 
 READ FILES AND EDIT FILES
-
 less - чтение файлов по странрично  //////////
 q - выход
 g - переход в начала файла
@@ -100,6 +99,20 @@ h - справка
 HISTORY -  история комманд
 !!  - предыдущая команда
 CTRL+R - поиск по пред командам
+
+CMD LINE
+ mkdir -p books/hemmingway/favorites
+rmdir каталог
+ find /home -name puppies.jpg
+find /home -type d -name MyFolder
+whatis cat - что делает данная команда
+alias foobar='ls -la'    - создание псевдонима
+~/.bashrc  - где сохранять псевдонимы
+ unalias foobar -  удалить псевдонимы
+ cat < peanuts.txt > banana.txt  -  перенаправление ввода
+
+
+
 
 
 
