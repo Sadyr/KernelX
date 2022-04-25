@@ -741,8 +741,9 @@ https://stackoverflow.com/questions/7534056/mysql-root-password-change
 https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04-ru
 command mysql
 http://g2pc1.bu.edu/~qzpeng/manual/MySQL%20Commands.htm
-
-
+Установка PhpMyAdmin
+https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-20-04-ru
+https://losst.ru/ustanovka-phpmyadmin-ubuntu-18-04
 
 
 
