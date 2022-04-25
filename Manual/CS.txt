@@ -722,9 +722,25 @@ env - посмшотерть все переменнве окружения
 Файловая система линукса
 Получение данных при работу мультиплексера мыши - sudo  od /dev/input/
 
+MYSQL >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+sudo mysql_secure_installation - run after install
+Настройте сервер MySQL в операционной системе Ubuntu.
+https://docs.rackspace.com/support/how-to/configure-mysql-server-on-the-ubuntu-operating-system/
+Как разрешить удаленный доступ к MySQL
+https://www.digitalocean.com/community/tutorials/how-to-allow-remote-access-to-mysql
+Руководство для начинающих по управлению пользователями MySQL
+https://www.thegeekdiary.com/beginners-guide-to-mysql-user-management/
+Mython and Mysql
+https://www.w3schools.com/python/python_mysql_create_db.asp
+https://realpython.com/python-mysql/
+Change root pass in  mysql
+https://stackoverflow.com/questions/7534056/mysql-root-password-change
+Как удалить MySQL?https://askubuntu.com/questions/172514/how-do-i-uninstall-mysql
 
-
-
+Установка MySQL в Ubuntu 20.04
+https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04-ru
+command mysql
+http://g2pc1.bu.edu/~qzpeng/manual/MySQL%20Commands.htm
 
 
 
