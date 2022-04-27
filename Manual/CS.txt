@@ -744,7 +744,13 @@ http://g2pc1.bu.edu/~qzpeng/manual/MySQL%20Commands.htm
 Установка PhpMyAdmin
 https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-20-04-ru
 https://losst.ru/ustanovka-phpmyadmin-ubuntu-18-04
-
+config
+vim /etc/mysql/mysql.conf.d/mysqld.cnf
+Если проблемы с удаленным соедиеннием
+skip-host-cache
+skip-name-resolve
+Логи
+vim /var/log/mysql/error.log
 
 
 
