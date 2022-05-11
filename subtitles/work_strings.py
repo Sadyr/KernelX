@@ -121,15 +121,48 @@
 # print(a)
 
 
-def clear_line(line):
-    wrong = "!@#$1234567890--> \t\n:;[]"
+# def clear_line(line):
+#     wrong = "!@#$1234567890--> \t\n:;[]"
+#
+#     for char in wrong:
+#         line = line.replace(char,'')
+#     return line
+# line = '00:00:47,881 --> 00:00:49,757'
+# print(clear_line(line))
 
-    for char in wrong:
-        line = line.replace(char,'')
-    return line
-line = '00:00:47,881 --> 00:00:49,757'
-print(clear_line(line))
 
+lines = 'sadyr amidala kf kkk kk k'
+lines2 = 'sadyr amidala kf kkk kk k'
+main_list = []
+
+def word_to_second_list(lines):
+    second_list = lines.split()
+    return (second_list)
+
+def list_to_main_list(main_list,second_list):
+    for el in second_list:
+        main_list.append(el.lower())
+    return (main_list)
+
+second_list = word_to_second_list(lines)
+
+main_list= (list_to_main_list(main_list,second_list))
+print(main_list)
+main_set = set(main_list)
+print(main_set)
+main_dict = {}
+def count_wort_in_sub(main_set,main_list, main_dict):
+    for element_set in main_set:
+        count = 0
+        for element_list in main_list:
+            if element_set == element_list:
+                count = count + 1
+            else:
+                continue
+        #print(element_set, count)
+        main_dict[element_set] = str(count)
+    return main_dict
+print(count_wort_in_sub(main_set,main_list, main_dict))
 
 
 
