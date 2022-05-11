@@ -4,6 +4,11 @@ from threading import Thread
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
+import sys
+
+#sys.stdout = open('file', 'w')
+#print('test')
+
 def make_system(T_init, volume, r, t_end,T_env):
     return modsim.System(T_init=T_init,
                   T_final=T_init,
@@ -127,3 +132,6 @@ print('Тізбектің алғашқы 5-нітиже:')
 print(results_tea.head(5))
 print('Тізбектің соңғы 5-нәтиже:')
 print(results_tea.tail(5))
+#sys.stdout.close()
+
+
