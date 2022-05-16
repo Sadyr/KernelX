@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="index" content="width=device-width, initial-scale=1.0">
+    <title>Запишись в поход в горы с гидом прямо сейчас!</title>
+  <script src="alert/dist/sweetalert-dev.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+  <link rel="stylesheet" href="alert/dist/sweetalert.css">
+  <style>
+  * {box-sizing: border-box}
+
+/* Full-width input fields */
+  input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+    width: 100%;
+  }
+}
+
+/* A few custom styles for date inputs */
+input[type="date"] {
+    appearance: none;
+    -webkit-appearance: none;
+    color: #95a5a6;
+    font-family: "Helvetica", arial, sans-serif;
+    font-size: 18px;
+    border:1px solid #ecf0f1;
+    background:#ecf0f1;
+    padding:5px;
+    display: inline-block !important;
+    visibility: visible !important;
+}
+
+input[type="date"], focus {
+    color: #95a5a6;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+}
+
+/* All select elements on page */
+select {
+  position: relative;
+}
+
+/* Style by class. Effects the text of the contained options. */
+.blueText {
+  color: black;
+}
+
+/* Style by id. Effects position of the select drop down. */
+#styledSelect {
+  left: 10px;
+}
+button{
+  margin:auto;
+  display:block;
+}
+
+/* BUTTON STYLES */
+button{
+  padding:16px 32px;
+  font-family:helvetica;
+  font-size:16px;
+  font-weight:100;
+  color:#fff;
+  background: #587286;
+  border:0;
+  font-weight:100;
+}
+button:hover{
+  background: #3B5C76;
+}
+/* END OF BUTTON STYLES */
+</style>
+</head>
+<body>
+  
+    <form action="https://sheetdb.io/api/v1/wc1c6qdxery6t" method="post" id="sheetdb-form">
+        <div class="container">
+          <h1>Запишись в поход в горы с гидом прямо сейчас!</h1>
+          <hr>
+      
+          <label for="Name"><b>Как вас зовут?</b></label>
+          <input type="text" placeholder="Имя" name="data[Name]" required>
+      
+          <label for="Phone"><b>Ваш номер телефона</b></label>
+          <input type="text" placeholder="8 777 888 88 77" name="data[Phone]" required>
+      
+    <label for="Time"><b> На сколько дней планируете поход?</b></label> <br>
+      <br>
+       <select id="styledSelect" class="blueText"  name="data[Time]" required> 
+         <option value="Однодневный">Однодневный</option>
+         <option value="Однодневный">Двухдневный</option>
+         <option value="Однодневный">Более трех дней</option>
+      </select> <br>
+      
+      <br>
+      <label for="count person"><b> Сколько Вас человек?</b></label> <br>
+      <br>
+      <select id="styledSelect" class="blueText" name="data[count person]" required>
+      <option value="1" >1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="Больше 5-человек">Больше 5-человек</option>
+      </select> <br>
+      <br>
+    <label for="Дата поездки"> <b> В какие даты планируете поход? </b> <br></label>
+
+      <input type="date" required="required" name="data[date]" required>
+      <br>
+   <label for="Comment"> <b>Комментарий</b> </label> <br>
+      
+     <textarea
+          style="width: 300px;height: 50px;
+                 padding: 0px; border:5px 
+         background-color:aliceblue;"
+        name="data[Comment]" required >
+</textarea>
+      <br>
+          <div class="clearfix">
+        
+            <button type="submit" class="signupbtn">Отправить запрос</button>
+          </div>
+        </div>
+      
+      </form>
+
+
+
+        <script>
+            var form = document.getElementById('sheetdb-form');
+        form.addEventListener("submit", e => {
+          e.preventDefault();
+          fetch(form.action, {
+              method : "POST",
+              body: new FormData(document.getElementById("sheetdb-form")),
+          }).then(
+              response => response.json()
+          ).then((html) => {
+            // you can put any JS code her
+  function fireSweetAlert() {
+      Swal.fire(
+            'Ваша зявка успешно принята!!',
+            'Скоро мы с Вами свяжемся!'
+        )
+    }
+  fireSweetAlert()
+    window.location.replace("http://gory.kz");
+          });
+        });
+        </script>
+
+
+</body>
+</html>
