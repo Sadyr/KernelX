@@ -28,6 +28,8 @@ GIT ANA GITHUB>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # git branche -M main
 # git push -U origin main
 
+
+
 USRS ANA GROUPS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 useradd username  - создать пользователя
 passwd username    -добавить пароль для пользователю
@@ -53,10 +55,12 @@ usermod -aG sudo sadyr
 su - sadyr
 $ sudo userdel боб
 $ passwd bob
-
-
 Существует файл с именем /etc/sudoers, в этом файле перечислены пользователи,
 которые могут запускать sudo. Вы можете редактировать этот файл с помощью команды visudo .
+
+
+
+
 WEB-SERVER >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 sudo systemctl stop httpd  - work with process httpd  | start stop status restart reload disable enable 
 yum install links  - скачать браузер на сервер сентос
@@ -72,6 +76,10 @@ https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-s
 https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7#step-four-%E2%80%94-test-php-processing-on-your-web-server
 https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-20-04-ru
 
+
+
+
+
 NETWORK >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 yum install net-tools    -  установить сетевые утилиты
 netstat -lt -p    -  показать слущающие тсп порты процессы
@@ -84,10 +92,14 @@ netstat -an |grep 65432
 hostname -i  >> Узнать ip хоста
 curl -4 icanhazip.com  >> Узнать публичный адрес хоста
 
+
+
 FIREWALL >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
 firewall-cmd  --permanent  --add-service=http  >> Добавить сервисе http в фаирволл
 firewall-cmd --permanent  --add-service=https  >> Добавить сервисе https в фаирволл
 firewall-cmd  --reload   >> Перечитать конфиги файрвола
+
+
 
 PACKAGE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
 rpm -qa |grep mariadb  >> Найти установленную прогу из списка
@@ -123,73 +135,6 @@ echo $USER   - see username
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Library:
--- Книги, нацеленные на практику программирования, необходимую в корпоративном секторе
-    https://teletype.in/@akazakov/Hk0gc0iCH
-
-Задачки по програмированию:
-
--- 28 cайтов, на которых можно порешать задачи по программированию
-https://tprg.ru/p7ex
-https://stepik.org/course/431/info
-https://checkio.org/
-https://www.codewars.com/
-https://leetcode.com/
-http://euler.jakumo.org/
-http://pythontutor.ru/
-https://acmp.ru/index.asp?main=task
-123
-КОМАНДНАЯ СТРОКА:
-quit() - завершение работы в питоне 
-python script1.py - Запуск скрипта на cmd
-
-
-
-
-print(*input()[::2], sep='\n')
-
 DJANGO
 Django-admin startproject nir - запуск проекта
 Python manage.py runserver    - запуск локального сервера
@@ -202,11 +147,7 @@ Pip freeze
 Pip freeze > requirments.txt
  python manage.py shell           -   доступ к оболочке
 python manage.py migrate           -миграция
-Python manage.py startapp main    создания приложения 
-
-КНИГИ и ССЫЛКИ:
- Джанго на примерах: https://codernet.ru/tem/static/pdfjs/web/viewer.html?file=/media/Django%202%20%D0%B2%20%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%B0%D1%85.%20%D0%90.%D0%9C%D0%B5%D0%BB%D0%B5/django_2_v_primerax_a_mele.pdf
-
+Python manage.py startapp main    создания приложения
 Почтовый клиент для почты
 добавить эти строки в settings.py 
 EMAIL_HOST = 'smtp.gmail.com'
@@ -216,156 +157,6 @@ EMAIL_HOST_PASSWORD = "Miraxes1997"
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
-GIT
-Git
- git --version   - проверить версию гита
- sudo apt install git  - установка гита
-
-git config --global user.name "Sauytov Sadyr"     - добавить имя в конфиг файл
-
-git config --global user.email "sadyr0012@mail.com"   - добавить емайл в конфиг файл
-
-путь к конфиг файлу  - находится в корневом каталоге
-
-git init .   - создать базу данных гита в определенной директории
-
-echo "Source file2" > file2.txt  - создать файл с таким содержимом (пример с добавлением и с изменением файла)
-
-git status    -  получить статус файлов
-
-git add *    - добавить файлы в репозитори
-
-git commit -m "My initial commit, this is Version1.0"  - создание коммитов
-
-git log   - инфо о последних коммитах
-
-git log -p  - подробная инфа о последних коммитах
-
-git log -p -1   -    вывести последний один коммит и подробно
-
-git diff  —staged    - покажет что было до и что будет потом(после коммита)
-
-git checkout — file.txt    - вернуть предыдущую версию
-
-Точен для линукса 
-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
-
-
-Клонирование гита  из облака в локалку
-git clone https:... # использование https
-
-Клонирование гита  из облака в локалку
-git clone git:... # использование ssh
-
-echo "hello World" > file.txt
-
-git add .
-
-
-git commit -m "Added hello world"
-
-git push origin - добавить /обновить репозиторий в гитхаб онлайн
-
-git remote -v   - увидеть куда ссылается локальная директория репозитория в интернете 
-
-git remote set-url origin git@gih...  - изменить ранее добавленную ссылку которая ссылается в интернете
-
-Создание SSH на Linux
-
-В терминале ввести 
-Ssh-keygen
-Открыть файл с этим ключом и скопировать её в github в settings
-
-Уроки в branch 
-Примеры:
-Шаг 1. Создать новую папку с локальной репозиторий 
-git init myapp
-
-Шаг 2. Открыть папку с локальной репозиторий 
-cd  myapp
-
-Шаг 3. Проверить статус гита
- Git status # пусто
-
-Шаг4. Проверить статус branch 
-Git branch  # пусто
-
-Шаг 5. Создать файл в локальной репозиторий 
-echo "ver1" > index.html
-
-Шаг 6 . Git status 
-
-Шаг 7. Git add .
-Шаг 8. Git commit -m "Version1.0"
-Шаг 9. Git branch # master
-
-Теперь создаём версии
-Версия 2.
-Echo "Ver2"  > ./ index.html 
-Git add .
-Git commit -m "Version2.0"
-Создать 3 версии
-
-Создаём branch 
-1. Вариант 
-Git branch fix_error / создали бренди
-Проверяем
-Git branch # отображения 2 branch master и fix_error. Текущий branch выделяется зелёным цветом
-Переходим в branch fix_error
-Checkout fix_error 
-Удаляем branch 
-Branch -d fix_error 
-2. Вариант. Создать branch и сразу нему перейти 
-Git checkout -b  sadyr_fix_error 
-
-Переходим в новый созданный branch,  добавляем/обновляем данные 
-После возвращаемся в master branch и к нему соединяем branch fix_error 
-Git merge fix_error 
-
-Чтобы удалить branch  к которому не применили команду merge, нужно набрать
-Git branch -D fix_error 
-
-Возврат на предыдущий версии
-У нас в наличии есть 5 версий программы. Например мы хотим временно вернуться на 3 версию прочитать.
-Временно вернуться.
-Когда Проверяем логи там есть хэш каждого коммита. Копируем её
-Git checkout  хэш
-Type index.html # версия 3
-Чтобы вернуться на текущий коммит
-Git checkout master
-
-
-Изменить предыдущий коммит не создавая новых коммитов
-
-Проверяем текущий файл
-Type index.html # ver5.0
-
-Изменением содержимое файла
-
-Echo "Versioooon5.0" > index.html 
-
-Изменяем  комментарий коммита
-
-Git commit --amend # открывается редактор vim   или vi . Там меняем комментарий.  Чтобы сохранить нажимаем Esc ,прописываем двоеточие(:) и там пишем wq!
-
-
-Полностью вернуться на предыдущую версию. Например мы в 5 версии, хотим вернуться на 4.0 
-
-Git reset --hard HEAD ~ 2
-Если в этой команде прописать только тильду (~) ,тогда мы вернёмся на одну версию назад, а если хотим на два ,тогда нужно писать ~2
-
-
-Как стереть все коммиты, чтобы была последняя версия
-Git reset --soft HEAD ~3
-получить изминение данных на ПК 2 с удаленного репозитория которые сделаны с компьютера пк 1
-git pull origin main
-1
- LINUX
-Источники:
-Книги- Brian Word: How Linux works
-https://younglinux.info/bash/filestype
-
-ВВЕДЕНИЕ
 
  uptime	-Сколько времени включен компьютер
  uname	-Имя ОС
@@ -434,295 +225,8 @@ ln  / >>  file.txt
 ln file2.txt dublicate.txt
 
 
-find - поиск файлов
-Примеры:
- find /home -name '*.txt'
-find /home  - name  'file*.txt'
-sudo find / -name 'Readme.txt '
-wc linux-history.txt   -  сколько строк,сколько слов,сколько символов в файле
-Если только количество строк,тогда
-wc -l linux-history.txt
-Если только количество слов,тогда
-wc -w  linux-history.txt
 
-sort names.txt  - выводит данные из файла в сортированном виде
-sort  -n numbers.txt   - чтобы отсортировать цифр
-cut -d  ">" -f 3 filesdata.txt  -    в тектовом файле разделить 
-field с делиметором и потом вывести её, то есть определённые филды
-
-cut -d  ">"  -f 3 | sort - сразу же отсортировать выходные данные
-cut -d  ">"  -f 3 | wc - Количество строк и тд
-cut -d  ">"  -f 3 | sort| wc
-
-find - найти файл
-wc - вывести кол-во байт, слов, строк, символов
-cut   - вывести определенный стобек
-sort - вывести отсортированный текст
-
-
-grep
-grep -i linux ./* -    -  поиск по файла содержащие определенные слова, 
-при этом игнорируя Заглавная она или нет
-grep linux  -R ./*^C - поиск по файлам содержащий определенное слово
-grep .gov mydatfile.doc
-sudo grep balerion /etc/shadow
-passwords
-grep -E "[A-Za-z\.]*@[A-Za-z\.]*.gov" mydatfile.doc
-
-grep -lr root /etc/
-sort names.txt  >  names_sorted.txt  - отсортировать файл  и передать выводные данные 
-в новый файл. Одна стрелочка
- означает уничтожить текущий файл с таким именем и/или создать файл и передать туда данные
-sort names.txt » names_sorted.txt   - добавить отсортированные файлы в конец другого файла. 
-» - означает добавить данные
-grep balerion /etc/* 2> errors.txt    - После набора команды мы получаем положительные и отрицательные ответы. Если мы хотим 
-перенаправить ответы,нужно выбирать '>'-это хорошие,   '2>' - а это плохие
-grep balerion /etc/* 2>  /dev/null   - Если мы не хотим сохранять плохие ответы в файлах, мы можем их перенаправить в несуществующий девайс.
-grep balerion /etc/*  > good.txt  2 > nogood.txt   - отправить ответы по одноименным файлам
-grep balerion /etc/*  &> results.txt   - если хотим оба ответа в один файл
-И кому пригодится:
-stdin - стандартный поток ввода 0 
-stdout - стандартный поток вывода 1
-stderr - стандартный gzip / поток ошибок 2
-
-
-Архивация с компрессия
-tar cf mytar.tar Folder1 - Заархивировать Folder
-tar xf mytar.tar - Разархивировать архив
-gzip  /bzip2  /xz   - скомпрессировать файл
-gunzip / bunzip2/ unxz - расскомпрессировать файл
-
-tar cvzf myBZIP2.bz2 Folder1 - Сжать Folder 1
-tar xvf myBZIP2.bz2             -Распаковать архив
-tar tf myBZIP2.bz2                     - посмотреть что внутри архива
-
-zip -r myZIP.zip Folder1    -  Запаковать Folder 1
-unzip MyZIP.zip           -Распаковать файл 
-Распаковать   /.bz2 Folder1/в определенную папку
-tar -C /home/user -xvf archive.tar.gz
-* ключ -C используется для указания папки, куда необходимо распаковать файлы из архива.
-
-ps -aux | grep bash  - какие процесс запущены и поиск по определенным словам
-
-может быть кому-то пригодится: вместо top использовать htop
- (чем то похож на диспетчер задач на Windows), но перед этим в терминале прописать 
-sudo apt-get install htop
-dmesg | grep sda  - лог файл который живет в оперативке пока комп включен + поиск по словам
-top - TASK manager kak windows
-free - показать состояние памяти в байтах
-free -h  - показать состояние памяти  в MB and GB
-ps - показать мои процессы
-ps aux  - показать все процессы от всех пользователей
-ps aux | grep bash -  найти все процессы bash
-Редактирование файлов
-gedit - текстовый редактор для линукс
-nano - текстовый редактор в терминале
-nano newfile.txt   - сразу создать файл и редачить
-Типы аккаунтов и важные файды
-cat /etc/passwd  -    инфо об аккаунтах
-udo cat /etc/shadow    - инфо о паролях аккаунтов
-cat /etc/group -  инфо о группах аккаунтов
-whoami - кто я такой. имя аккаунта
-su vasya - сменить пользователя в терминале. exit - вернуться
-id - узнать инфо об аккаунте
-last - инфо обо всех входах в систему
-who - кто пользуется системов на данный момент. w - тоже самое но более подробная инфа
-
-users and success right/ permisiions
-sudo useradd -m user1  - создания пользователя
-sudo passwd user1   -  add/edit password for user
-sudo userdel  user1   -  delete user
-sudo userdel   -r user1  -  delete user and user directories
-sudo groupadd Programmers  - create groups
-cat /etc/group   - check group
-cat /etc/passwd  - check users
-sudo cat /etc/shadow - check passwords
-sudo usermod -aG Marketing vasya   - add users to group
-id vasya - check which group added users
-sudo usermod -aG sudo vasya   - provide users superuser privilige
-sudo deluser vasya Marketing - delete user from  group
-
-sudo chown petya zzz/  -  change access right users for files and directories
-sudo chgrp Programmers vasya.txt   - change access  right groups for files and directory
-chmod o+x denis.txt    - change permissions for others users for files
-chmod g-w denis.txt    -  remove permissions on write for group
-chmod ugo=r denis.txt   -  to give permissions users, groups and others only read
-SSauytov, [28.08.21 15:45]
-+ Instead of ugo, using a (all)
-SSauytov, [28.08.21 15:54]
-sudo chmod o+t Myfolder    - нет возможности для других пользователей уддалить
-
-chown - edit owner file/directory
-chgrp -  edit group file/directory
-chmod - edit access right on file/directory
-
-chmod ugo+x myfile.txt - add X all
-chmod g-rw myfile.txt - remove RW group
-chmod go=rw myfile.txt - install RW all others
-u=user
-g=group
-o=other
-a=ugo
-
-chmod 777 myfile.txt - install RWX alls
-chmod 741 myfile.txt - install
-RWX - owner
-R-- group
---X others
-
-r=4
-w=2
-x=1
-rwx   7   4+2+1
-rw-   6   4+2+0
-r-x   5   4+0+1
-r--   4   4+0+0
--wx   3   0+2+1
--w-   2   0+2+0
---x   1   0+0+1
----   0   0+0+0
-chmod 1777 myDir   on StickyBit
-chmod 0777 myDir   off Stickybit
-
-
-networks
-ipconfig    - show my ip address
-ip addr show  - show my ip address
-route - show addreess route gateway
-ping   - testing connection in addresses
-host   - to give ip address site
-dig     - to give ip address site
-netstat   - show network connection cumputer
-
-wget  - download file from internet
-
-sudo apt-get install   - download and install apps
-sudo apt-get remove   - delete apps
-sudo dpkg -i   - install apps from file deb
-sudo dpkg -r  - remove apps
-
-Создать катаглог  testdir1
-ssh root@78.40.109.99
-
-УРОВЕНЬ ОПЕРАЦИОННОЙ СИСТЕМЫ:
-    Загрузчик ОС
-    Файловая система
-    Управление пользователями
-    Настройка служб
-    Чтение логов
-    Управление устройствами
-    Настройка сетевых параметров
-    Управление межсетевым экраном
-    Службы каталогов
-    DNS/DHCP
-    Сервер терминалов
-    Веб серверы и прокси
-    Серверы БД
-    VPN и пограничные шлюзы
-    gpo и резервное копирование
-    Управление вирутальными машинами
-УРОВЕНЬ ПРОГРАМНОГО ОБЕСПЕЧЕНИЕ
-    Файловый сервер
-    Веб сервер
-    LAMP
-    Application server
-    Terminal service
-    Active directory
-    DOcker
-    Veeam ,acronis
-    bash,powersheelmpython
-    Zabbix
-УРОВЕНЬ МОНИТОРИНГА
-    Мониторинг CPU
-    Мониторинг ОЗУ
-    Мониторинг сети
-    Мониторинг скорости доступа в интернет
-    Мониторинг проблем сети
-    Пропускная способность канала
-    Поиск проблшем сервера
-УРОВЕНЬ ДРУГИЕ
-    Инициализация системы
-    Процессы
-    Postfix,почта
-    VPS
-    SSh
-    SSL/TSL
-    Резервное копирование bacula
-    Планирование задач cron
-    Передача файлов по сети
-    Менеджер пакетов
-    Системный менеджер   Systemd
-    умение работать ремуте rsyslog
-    Умение работать SGI FastSWGI
-УРОВЕНЬ СЕТЕЙ
-    Адресация   TCP/IP
-    Маршрутизаторы,коммутаторы, оптика
-    Протоколы,  DNS,DHCP,HTTP,FTP,SMB,POP,IMAP,SMTP
-    Тиып вещания,nic team,vlan
-
-Процессы
-    Управление пользовательским окружением
-Конфигурации salt
-Распреждение ресурсов системы
-
-ПРОЦЕССЫ
-
-++ pstree   Показывает дерево процессов
- Unit модули которыми оперирует systemd
- *.service - службы
- *.mount * точки монтирование
- *.socket
- /usrlib/systemd   - директория с юнитами по умолчанию
- /etc/systemd - директория с управляемыми юнитами
- ++ ystemctl list-units  - Показывает все запущенные юниты
- ++ ystemctl list-units  - Не запущенные из за ошибки юниты
- ++ systemctl list-unit-files  - запущенные но не активные юниты
- ++systemctl list-units --type=service -Какие сервисы запущен в системе
- ++systemctl status crond   -- проверить статус службы
- !!! journald - служба журналирование
- !!! systemctl reboot|poweroff|susbend|hibernate|hybrid-sleep
- !!! Systemctl start}stop|reload|restart|status init
- ++journalctl -f   -- поток событий в система
- ++journalctl -n 10  - последние 10 событий
- ++journalctl _UID=0 --показать поток событий упо айди пользователя
-
-
- Команды и начало linux
- uname - инфо о юниксе
- uname -r -релиз ядра
- uname -a  -вся инфа о машине
- hostname - имя узла(компа)
- finger balerion   - получение инфы о конкретном пользователе
- id balerion  - инфа о юзере
- sudo -i  - перейти в режим суперпользователя
- logout - выйти
- w - инфо о состоянии системы и о пользователях
- lsmod - модули, компоненты ядра загруженные в ядро
- find - вывести все содержимое каталога
- wc -l  - посчитать количество строк
- file /bin/bash  -  информация о файле
- which file - где находится программа
- ldd /bin/date   - узнать какие библиотеки использует та или иная программа
- ldd /usr/bin/file
- strace  - системный трасировщик, для просомтра обращений к ядру  ОС
- ltrace - библиотечный трассировщик, для просмотра обрашщений к библиотекам
-lspci  - вывод инсормации по контроллерам
-lsusb  - инфо о usb
-free  - инфо о памяти свободном
-free -m -в мегабайтах
-ps ax   - инфо о всех процессах системы
-whatis  ls - что такое команда
-apropos remove  - поиск нужной команды
-^W + удалить слово
-^U - удаление строки
-^\  -аварийное прерывание
-^D   -прерывание ввода
-env - посмшотерть все переменнве окружения
-
-Файловая система линукса
-Получение данных при работу мультиплексера мыши - sudo  od /dev/input/
-
-MYSQL >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ MYSQL >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 sudo mysql_secure_installation - run after install
 Настройте сервер MySQL в операционной системе Ubuntu.
 https://docs.rackspace.com/support/how-to/configure-mysql-server-on-the-ubuntu-operating-system/
@@ -751,6 +255,65 @@ skip-host-cache
 skip-name-resolve
 Логи
 vim /var/log/mysql/error.log
+
+
+ПРОЦЕССЫ
+ kill -9 12445   - грубое завершение процесса
+kill 12445   - медленное завершение процесса
+sleep 1000 &   - Отправка задания в фоновый режим  (&)
+jobs - Просмотреть все фоновые задания
+Отправка задания в фоновом режиме на существующем задании
+ Сначала приостановите задание с помощью Ctrl-Z, затем запустите команду bg , чтобы перевести его в фоновый режим.
+fg   - %1 Перемещение задания из фона на передний план
+kill %1  - Kill background jobs
+
+
+ ПАКЕТЫ
+/etc/apt/sources.list   -  В системе Debian этим исходным файлом является файл /etc/apt/sources.list . Ваша машина будет знать, что нужно заглянуть туда и проверить наличие добавленных вами исходных репозиториев.
+Install a package
+Debian: $ dpkg -i some_deb_package.deb
+RPM: $ rpm -i some_rpm_package.rpm
+The i stands for install. You can also use the longer format of --install.
+Remove a package
+Debian: $ dpkg -r some_deb_package.deb
+RPM: $ rpm -e some_rpm_package.rpm
+Debian: r for remove
+RPM: e for erase
+List installed packages
+Debian: $ dpkg -l
+RPM: $ rpm -qa
+Debian: l for list
+RPM: q for query and a for all
+
+Install a package from a repository
+Debian: $ apt install package_name
+RPM: $ yum install package_name
+
+Remove a package
+Debian: $ apt remove package_name
+RPM: $ yum erase package_name
+
+Updating packages for a repository
+It's always best practice to update your package repositories so they are up to date before you install and update a package.
+Debian: apt update; apt upgrade
+RPM: yum update
+Get information about an installed package
+Debian: apt show package_name
+RPM: yum info package_name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
