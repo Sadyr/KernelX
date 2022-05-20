@@ -1,3 +1,30 @@
+DJANGO
+python -m venv venv
+source todoenv/bin/activate
+ python3 -m pip freeze > requirements.txt
+django-admin startproject todo_project .
+Django-admin startproject nir - запуск проекта
+Python manage.py runserver    - запуск локального сервера
+Ctrl+c                        - остановить сервер
+CLS                           - очистить терминал
+python manage.py makemigrations  - миграция баз данных
+python manage.py createsuperuser  - создание суперюзера
+pip install -r requirements.txt   - установка пакетов
+Pip freeze
+Pip freeze > requirments.txt
+ python manage.py shell           -   доступ к оболочке
+python manage.py migrate           -миграция
+Python manage.py startapp main    создания приложения
+Почтовый клиент для почты
+добавить эти строки в settings.py
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "sadyr0012@gmail.com"
+EMAIL_HOST_PASSWORD = "Miraxes1997"
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+
+
 GIT ANA GITHUB>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # git config --global user.name "Sadyr Sauytov"
 # git config --global user.email "sadyr0012@gmail.com"
@@ -29,6 +56,53 @@ GIT ANA GITHUB>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # git push -U origin main
 
 
+ MYSQL >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+sudo mysql_secure_installation - run after install
+Настройте сервер MySQL в операционной системе Ubuntu.
+https://docs.rackspace.com/support/how-to/configure-mysql-server-on-the-ubuntu-operating-system/
+Как разрешить удаленный доступ к MySQL
+https://www.digitalocean.com/community/tutorials/how-to-allow-remote-access-to-mysql
+Руководство для начинающих по управлению пользователями MySQL
+https://www.thegeekdiary.com/beginners-guide-to-mysql-user-management/
+Mython and Mysql
+https://www.w3schools.com/python/python_mysql_create_db.asp
+https://realpython.com/python-mysql/
+Change root pass in  mysql
+https://stackoverflow.com/questions/7534056/mysql-root-password-change
+Как удалить MySQL?https://askubuntu.com/questions/172514/how-do-i-uninstall-mysql
+
+Установка MySQL в Ubuntu 20.04
+https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04-ru
+command mysql
+http://g2pc1.bu.edu/~qzpeng/manual/MySQL%20Commands.htm
+Установка PhpMyAdmin
+https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-20-04-ru
+https://losst.ru/ustanovka-phpmyadmin-ubuntu-18-04
+config
+vim /etc/mysql/mysql.conf.d/mysqld.cnf
+Если проблемы с удаленным соедиеннием
+skip-host-cache
+skip-name-resolve
+Логи
+vim /var/log/mysql/error.log
+
+
+
+WEB-SERVER >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+sudo systemctl stop httpd  - work with process httpd  | start stop status restart reload disable enable 
+yum install links  - скачать браузер на сервер сентос
+yum search httpd   -  проверить установлеен ли  демон веб сервера
+yum install httpd httpd manual  -  установить веб сервер апач и мануа л к ниму
+rpm -qi httpd  - проверить какие пакеты апач укстановлены
+rpm -ql httpd   - вывести лист
+rpm -qd httpd    поиск документаций
+rpm -qc httpd   - поиск конфиг файлов
+httpd -t   - проверка синтакиса конфиг файлов
+service httpd reload   -  перечитать конфиг файлы
+https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-centos-7-ru
+https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7#step-four-%E2%80%94-test-php-processing-on-your-web-server
+https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-20-04-ru
+
 
 USRS ANA GROUPS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 useradd username  - создать пользователя
@@ -59,27 +133,6 @@ $ passwd bob
 которые могут запускать sudo. Вы можете редактировать этот файл с помощью команды visudo .
 
 
-
-
-WEB-SERVER >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-sudo systemctl stop httpd  - work with process httpd  | start stop status restart reload disable enable 
-yum install links  - скачать браузер на сервер сентос
-yum search httpd   -  проверить установлеен ли  демон веб сервера
-yum install httpd httpd manual  -  установить веб сервер апач и мануа л к ниму
-rpm -qi httpd  - проверить какие пакеты апач укстановлены
-rpm -ql httpd   - вывести лист
-rpm -qd httpd    поиск документаций
-rpm -qc httpd   - поиск конфиг файлов
-httpd -t   - проверка синтакиса конфиг файлов
-service httpd reload   -  перечитать конфиг файлы
-https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-centos-7-ru
-https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7#step-four-%E2%80%94-test-php-processing-on-your-web-server
-https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-20-04-ru
-
-
-
-
-
 NETWORK >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 yum install net-tools    -  установить сетевые утилиты
 netstat -lt -p    -  показать слущающие тсп порты процессы
@@ -98,12 +151,6 @@ FIREWALL >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
 firewall-cmd  --permanent  --add-service=http  >> Добавить сервисе http в фаирволл
 firewall-cmd --permanent  --add-service=https  >> Добавить сервисе https в фаирволл
 firewall-cmd  --reload   >> Перечитать конфиги файрвола
-
-
-
-PACKAGE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
-rpm -qa |grep mariadb  >> Найти установленную прогу из списка
-yum remove mariadb-libs-5.5.68-1.el7.x86_64 >>>>>>>>>Удалить прогу
 
 
 READ FILES AND EDIT FILES
@@ -131,31 +178,6 @@ alias foobar='ls -la'    - создание псевдонима
 TEXT
 echo $HOME  - path to home
 echo $USER   - see username
-
-
-
-
-DJANGO
-Django-admin startproject nir - запуск проекта
-Python manage.py runserver    - запуск локального сервера
-Ctrl+c                        - остановить сервер
-CLS                           - очистить терминал
-python manage.py makemigrations  - миграция баз данных
-python manage.py createsuperuser  - создание суперюзера
-pip install -r requirements.txt   - установка пакетов
-Pip freeze
-Pip freeze > requirments.txt
- python manage.py shell           -   доступ к оболочке
-python manage.py migrate           -миграция
-Python manage.py startapp main    создания приложения
-Почтовый клиент для почты
-добавить эти строки в settings.py 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = "sadyr0012@gmail.com"
-EMAIL_HOST_PASSWORD = "Miraxes1997"
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
 
 
  uptime	-Сколько времени включен компьютер
@@ -225,38 +247,6 @@ ln  / >>  file.txt
 ln file2.txt dublicate.txt
 
 
-
- MYSQL >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-sudo mysql_secure_installation - run after install
-Настройте сервер MySQL в операционной системе Ubuntu.
-https://docs.rackspace.com/support/how-to/configure-mysql-server-on-the-ubuntu-operating-system/
-Как разрешить удаленный доступ к MySQL
-https://www.digitalocean.com/community/tutorials/how-to-allow-remote-access-to-mysql
-Руководство для начинающих по управлению пользователями MySQL
-https://www.thegeekdiary.com/beginners-guide-to-mysql-user-management/
-Mython and Mysql
-https://www.w3schools.com/python/python_mysql_create_db.asp
-https://realpython.com/python-mysql/
-Change root pass in  mysql
-https://stackoverflow.com/questions/7534056/mysql-root-password-change
-Как удалить MySQL?https://askubuntu.com/questions/172514/how-do-i-uninstall-mysql
-
-Установка MySQL в Ubuntu 20.04
-https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04-ru
-command mysql
-http://g2pc1.bu.edu/~qzpeng/manual/MySQL%20Commands.htm
-Установка PhpMyAdmin
-https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-20-04-ru
-https://losst.ru/ustanovka-phpmyadmin-ubuntu-18-04
-config
-vim /etc/mysql/mysql.conf.d/mysqld.cnf
-Если проблемы с удаленным соедиеннием
-skip-host-cache
-skip-name-resolve
-Логи
-vim /var/log/mysql/error.log
-
-
 ПРОЦЕССЫ
  kill -9 12445   - грубое завершение процесса
 kill 12445   - медленное завершение процесса
@@ -300,8 +290,11 @@ RPM: yum update
 Get information about an installed package
 Debian: apt show package_name
 RPM: yum info package_name
-
-
+Compiles
+https://linuxjourney.com/lesson/compile-source-code
+PACKAGE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+rpm -qa |grep mariadb  >> Найти установленную прогу из списка
+yum remove mariadb-libs-5.5.68-1.el7.x86_64 >>>>>>>>>Удалить прогу
 
 
 
