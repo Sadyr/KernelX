@@ -1,25 +1,16 @@
 :root{
-    --color1: #00BFFF		;
-    --color2: #FF0000 ;
+    --color1: #00BFFF;
+    --color2: #FF0000;
     --color3:#F0FFFF;	
-}
-
-.about {
-    margin-top: -5rem !important;
-
-}
-.navbar-brand {
-    color: var(--color2);
-}
-
-header,footer,section {
-    padding: 100px 0;
 }
 header {
 padding: 10px 0;
 }
 header h1 {
     color: var(--color2);
+}
+header,footer,section {
+    padding: 100px 0;
 }
 header h4 {
     color: var(--color1);
@@ -28,118 +19,20 @@ header, footer {
     background: var(--color3);
     background-size: contain;
 }
-nav {
-    background-color:var(--color3);
-   border: 3px solid var(--color1);
-}
-.list-group-item {
-    background-color:var(--color3);
-}
-.navbar-toggler {
-    border: 3px solid var(--color1);
-    background-color:white;
-    color: black;
-    
-}
-.itd_play{
-    background-color: var(--color1);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    margin: 30px auto 30px;
-    transition:all 0.2s ease ;
-
-}
-.itd_play:hover{
-    background-color: var(--color2);
-}
-.itd_triangle {
-    margin-right: -3px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 10px 0 10px 20px;
-    border-color: transparent transparent transparent var(--bs-white);
-}
-.btn-itd {
-    display: block;
-    max-width: 200px;
-    margin: 0 auto;
-    padding: 8px 30px;
-    color: var(--bs-white);
-    background-color: var(--color2);
-
-}
-
-.btn-itd:hover{
-    color: var(--bs-white);
-    background-color: var(--color1);
-
-}
-
-.color1 {
-    color: var(--color1);
-}
-
-.color2 {
-    color: var(--color2);
-}
-
-.bg1 {
-    background-color: var(--color1);
-}
-
-.bg2 {
-    background-color: var(--color2);
-}
-
-/* О курсе*/
-.about, .shedule{
-    background-color: var(--color3);
+.about {
+    margin-top: -5rem !important;
 }
 .about i {
     font-size: 25px;
     color: var(--color2);
 }
-.itd_circle {
-margin: 0 auto 15px;
-width: 70px;
-height: 70px;
-border: 3px solid var(--color2);
-border-radius: 50%;
-display: flex;
-justify-content: center;
-align-items: center;
+.navbar-brand {
+    color: var(--color2);
 }
-.line {
-   width: 100%;
-   height: 12px;
-   background-color: var(--color1); 
-   margin: 15px auto 30px;
+nav {
+    background-color:var(--color3);
+   border: 3px solid var(--color1);
 }
- 
-/* Ждя кого курс*/
-.forwhom h5 {
-    padding: 50px;
-    border: 3px solid var(--color1);
-}
-
-/* Программа курса */
-.accordion-button:not(.collapsed) {
-    color: var(--bs-black);
-    background-color: var(--bs-white);
-}
-
-.mt-n1 {
-    margin-top: -2rem !important;
-  }
-
-
-/* Place the navbar at the bottom of the page, and make it stick */
 .navibar {
     background-color: var(--color3);
     overflow: hidden;
@@ -148,9 +41,7 @@ align-items: center;
     width: 100%;
     border: 3px solid var(--color1);
   }
-  
-  /* Style the links inside the navigation bar */
-  .navibar a {
+.navibar a {
     float: left;
     display: block;
     color: #0d6efd;
@@ -158,8 +49,17 @@ align-items: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-  }
-  
- .sad {
-     color: blue;
  }
+.list-group-item {
+    background-color:var(--color3);
+}
+.line {
+   width: 100%;
+   height: 12px;
+   background-color: var(--color1);
+   margin: 15px auto 30px;
+}
+.mt-n1 {
+    margin-top: -2rem !important;
+  }
+
