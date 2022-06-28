@@ -6,7 +6,7 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 
 import sys
 
-#sys.stdout = open('file', 'w')
+#sys.stdout = open('file.txt', 'w')
 #print('test')
 
 def make_system(T_init, volume, r, t_end,T_env):

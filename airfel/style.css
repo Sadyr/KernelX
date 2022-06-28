@@ -1,0 +1,211 @@
+/*
+Theme Name: Airfel
+*/
+
+body {
+    background: var(--color3);
+    background-size: contain;
+}
+
+:root{
+    --color1: #00BFFF;
+    --color2: #FF0000;
+    --color3:#F0FFFF;
+}
+header {
+padding: 10px 0;
+}
+header h1 {
+    color: var(--color2);
+}
+header,footer,section {
+    padding: 100px 0;
+}
+header h4 {
+    color: var(--color1);
+}
+header, footer,section {
+    background: var(--color3);
+    background-size: contain;
+}
+.about {
+    margin-top: -5rem !important;
+    background: var(--color3);
+}
+.about i {
+    font-size: 25px;
+    color: var(--color2);
+}
+
+.navbar-brand {
+    color: var(--color2);
+}
+nav {
+    background-color:var(--color3);
+   border: 3px solid var(--color1);
+}
+.navibar {
+    background-color: var(--color3);
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border: 3px solid var(--color1);
+	
+  }
+.navibar a {
+    float: left;
+    display: block;
+    color: #0d6efd;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+ }
+.navibar li {
+	list-style:none ;}
+/*.list-group-item {
+    background-color:var(--color3);
+}*/
+.col a{
+    background-color:var(--color3);
+}
+
+.line {
+   width: 100%;
+   height: 12px;
+   background-color: var(--color1);
+   margin: 15px auto 30px;
+}
+.mt-n1 {
+    margin-top: -2rem !important;
+  }
+
+
+/*.menu_item a {
+	color: red;
+}*/
+
+
+
+/*.headerNavMenu ul {
+    /*text-align: justify;
+    line-height: 0;
+    margin: 0;
+    padding: 0;
+    width: 90%;
+    list-style-type: none;
+   list-style-image: none;*/
+   margin-left:auto;
+   margin-right:auto;
+
+}
+
+/*.headerNavMenu ul::after {
+  content: '';
+  width: 100%; /* Ensures justification for single lines */
+  /*display: inline-block;
+}*/
+
+/*.headerNavMenu li {
+   display: inline;
+   line-height: 100%;   
+}*/
+
+
+ .headerNavMenu ul {
+  list-style-type: none;
+  margin: 2px;
+  padding: 2px;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+ .headerNavMenu li a {
+  font-size: 18px;
+  display: block;
+  text-align: center;
+  padding: 15px 5px;
+  text-decoration: none;
+}
+
+/*/* Change the link color to #111 (black) on hover */
+ .headerNavMenu li a:hover {
+  background-color: var(--color1);
+}
+
+/* 404 */
+.page404 {
+  background-color: #eee;
+  padding: 150px 0;
+  text-align: center;
+}
+
+
+/*Product cart*/
+
+.main-content  h2{
+ margin-bottom: 50px;}
+
+.product-card {
+    box-shadow: 0 2px  5px 0 rgba(0, 0, 0, 0.6);
+    transition: all .3s;
+}
+
+.product-card:hover{
+box-shadow: 0 14px 30px -15px rgba(0, 0, 0, 0.75);
+}
+
+.product-thumb a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    padding: 20px;
+}
+
+.product-thumb img{
+   max-width: 100%;
+   max-height: 100%; 
+}
+
+.product-details {
+    padding: 20px;
+
+}
+
+.product-details h4  a  {
+font-weight: 500;  
+  display: block;
+  height: 60px;
+  overflow: hidden;
+  text-decoration: none;
+
+}
+
+.product-details p{
+font-size: 15px;
+margin-bottom: 20px;
+height: 44px;
+  overflow: hidden;
+  text-decoration: none;
+}
+.product-bottom-details {
+    overflow: hidden;  
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.product-price {
+   font-size: 18px;
+   color: #ee6e73;
+   font-weight: 600;
+}
+.product-links {
+  font-size: 20px;
+  margin-left: 10px;  
+}
+/*Product cart*/

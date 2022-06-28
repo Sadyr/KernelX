@@ -3,6 +3,8 @@ python -m venv venv
 source todoenv/bin/activate
  python3 -m pip freeze > requirements.txt
 django-admin startproject todo_project .
+python manage.py startapp polls
+
 Django-admin startproject nir - запуск проекта
 Python manage.py runserver    - запуск локального сервера
 Ctrl+c                        - остановить сервер
