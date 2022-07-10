@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Referral auth</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body {
+            background: #4C8BF4;
+        }
+        .auth-block {
+            background: white;
+            width: 300px;
+            padding: 15px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+        }
+        form {
+            display: inline-block;
+        }
+        form input {
+            margin: 8px 15px;
+            padding: 7px 10px;
+            font-size: 12pt;
+        }
+        .form-row {
+            display: flex;
+        }
+        #otp-code {
+            display: none;
+        }
+        #send-otp-btn {
+            display: none;
+        }
+        .btn {
+            background: #4C8BF4;
+            border: none;
+            padding: 15px;
+            margin: 8px 15px;
+            width: 100%;
+            color: white;
+            border-radius: 10px;
+            transition: 0.3s background;
+        }
+        .btn:hover:enabled {
+            background: #3271CF;
+        }
+        button:disabled,
+        button[disabled]{
+            background: #C0C0C0;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-block">
+        <form id="authFormSample" autocomplete="off">
+            <div class="form-row">
+                <input id="phone-number" type="text" placeholder="Phone Number">
+            </div>
+            <div class="form-row">
+                <input id="otp-code" type="text" placeholder="OTP Code">
+            </div>
+            <div class="form-row">
+                <button id="send-phone-btn" class="btn" type="button">Send</button>
+            </div>
+            <div class="form-row">
+                <button id="send-otp-btn" class="btn" type="button">Send</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            var referral_code = '{{referral_code}}';
+            var workflow;
+            var mobile_phone;
+            var otp_code;
+
+            $.ajax({
+                type: "post",
+                url: "/api/bonuses/referrals/validate/",
+                data: {referral_code: referral_code},
+                error: function (request, status, error) {
+                    $('#send-phone-btn').prop('disabled', true);
+                    alert("Реферальная система отключена или ссылка недействительна.");
+                }
+            });
+
+            $("#send-phone-btn").click(function(){
+                $.post("/api/orders/workflow/actualize/", {city: 1})
+                .done(function(data){
+                    workflow = data.data.uuid;
+                    mobile_phone = $("#phone-number").val();
+
+                    $.ajax({
+                        type: "post",
+                        url: "/api/v1/auth/signin/",
+                        data: {mobile_phone: mobile_phone, referral_code: referral_code},
+                        headers: {'workflow': workflow},
+                        success: function (data, text) {
+                            $('#phone-number').prop('readonly', true);
+                            $('#send-phone-btn').hide();
+                            $('#otp-code').show();
+                            $('#send-otp-btn').show();
+                        },
+                        error: function (request, status, error) {
+                            alert("Что-то пошло не так. Обратитесь к администратору.");
+                        }
+                    });
+                });
+            });
+
+            $("#send-otp-btn").click(function(){
+                otp_code = $("#otp-code").val();
+
+                $.ajax({
+                    type: "post",
+                    url: "/api/v1/auth/otp-verify/",
+                    data: {mobile_phone: mobile_phone, otp: otp_code},
+                    headers: {'workflow': workflow},
+                    success: function (data, text) {
+                        if(!alert("Поздравляем!")){window.location.reload();}
+                    },
+                    error: function (request, status, error) {
+                        alert("Что-то пошло не так. Обратитесь к администратору.");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

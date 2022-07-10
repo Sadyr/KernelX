@@ -1,0 +1,53 @@
+version: '3.7'
+
+volumes:
+  postgres:
+  media:
+  static:
+#  static_volume:
+#  media_volume:
+
+networks:
+  barbar-net:
+    driver: bridge
+
+services:
+  barbarfood:
+    container_name: barbarfood
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/barbar_food
+      - media:/media
+    env_file:
+      - ./.env.dev
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres_bar_bar
+    networks:
+      - barbar-net
+
+  postgres_bar_bar:
+    restart: always
+    image: postgres
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    env_file:
+      - ./.env.db
+    ports:
+      - "5433:5432"
+    networks:
+      - barbar-net
+#
+#  nginx:
+#    build: ./nginx
+#    volumes:
+#      - static_volume:/home/app/web/staticfiles
+#      - media_volume:/home/app/web/mediafiles
+#    ports:
+#      - 1337:80
+#    depends_on:
+#      - barbarfood

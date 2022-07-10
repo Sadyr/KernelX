@@ -1,0 +1,91 @@
+version: '3'
+
+volumes:
+  postgres:
+  media:
+  portainer_data:
+
+services:
+  rest_server:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/app
+      - media:/media
+    ports:
+      - "8990:8990"
+    depends_on:
+      - redis
+      - postgres
+    env_file:
+      - ./.env.dev
+
+  celery-beat:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/app
+    depends_on:
+      - rabbitmq
+      - celery-worker
+    env_file:
+      - ./.env.dev
+    environment:
+      - CONTAINER_TYPE=BEAT
+
+  celery-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/app
+    depends_on:
+      - rabbitmq
+    env_file:
+      - ./.env.dev
+    environment:
+      - CONTAINER_TYPE=CELERY
+
+  postgres:
+    image: postgres
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    depends_on:
+      - redis
+    env_file:
+      - ./.env.db
+
+  rabbitmq:
+    image: rabbitmq
+    depends_on:
+      - redis
+    ports:
+      - "5672:5672"
+
+  redis:
+    image: redis
+
+  portainer-agent:
+    image: portainer/agent
+    environment:
+      AGENT_PORT: 9001
+      LOG_LEVEL: debug
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/lib/docker/volumes:/var/lib/docker/volumes
+
+  portainer:
+    image: portainer/portainer:alpine
+    command: -H tcp://portainer-agent:9001 --tlsskipverify
+    ports:
+      - "9000:9000"
+    volumes:
+      - portainer_data:/data
+    depends_on:
+      - rest_server
+      - portainer-agent
+    restart: always

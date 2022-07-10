@@ -1,0 +1,16 @@
+"""
+Specific error codes to raise
+"""
+
+NOT_AUTHENTICATED = "not_authenticated"
+NO_ACTIVE_ACCOUNT = "no_active_account"
+INVALID_INPUT_DATA = "invalid_input_data"
+INVALID_OTP = "invalid_otp"
+NOT_FOUND = "not_found"
+OTP_RESEND_TIME_LIMIT = "otp_resend_time_limit"
+USER_ALREADY_EXISTS = "user_already_exists"
+USER_NOT_FOUND = "user_not_found"
+ADDRESS_NOT_FOUND = "address_not_found"
+ITEM_NOT_FOUND = "item_not_found"
+USER_SESSION_NOT_FOUND = "user_session_not_found"
+CAN_NOT_ADD_ZERO_COUNT_ITEM = "can_not_add_zero_count_item"
